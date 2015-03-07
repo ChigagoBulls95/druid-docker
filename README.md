@@ -95,3 +95,5 @@ Druid does allow system properties to override configs in the .properties files,
 One approach to using env vars in .properties files is to have a "sidecar" shell script as the Docker image's ENTRYPOINT, which takes all env vars named `DRUID_X_Y`, convert them into strings like `x.y=value` and then replace/append those into the .properties file using e.g. sed. That script would then run the Druid java command. Care must be taken with this approach so that any signals (e.g. SIGTERM) get sent to the java process and not to the shell script (probably need to use `exec`).
 
 Another option is to create generic base images using the stock .properties files, and then create sub-images with the actual .properties files to use overwriting the stock ones. A downside of this approach is that all config values are hard-coded and cannot be dynamic (e.g. random port chosen by Marathon). This also leads to creating separate Docker images for different environments, e.g. staging and production.
+
+[![Build](https://circleci.com/gh/ChigagoBulls95/druid-docker.png?style=shield)](https://circleci.com/gh/ChigagoBulls95/druid-docker)
