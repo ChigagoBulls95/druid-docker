@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - pip install -r tests/requirements.txt --allow-external PIL --allow-unverified PIL 
+    - sudo pip install -r tests/requirements.txt --allow-external PIL --allow-unverified PIL 
     - python test.py:
         pwd: 
           tests
