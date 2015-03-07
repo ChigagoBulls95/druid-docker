@@ -4,4 +4,4 @@ machine:
 
 test:
   override:
-    - python tests/tests.py
+    - python tests/test.py
