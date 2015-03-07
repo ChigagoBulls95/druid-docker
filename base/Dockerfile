@@ -15,4 +15,4 @@ RUN java -cp "/usr/local/druid/config/_common:/usr/local/druid/lib/*" io.druid.c
 
 ENV DRUID_COMMON_JAVA_OPTIONS -server -Duser.timezone=UTC -Dfile.encoding=UTF-8
 
-ADD ip.sh /ip.sh
+ADD common-druid.sh /common-druid.sh
