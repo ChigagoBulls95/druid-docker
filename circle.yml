@@ -4,4 +4,7 @@ machine:
 
 test:
   override:
-    - python tests/test.py
+    - pip install -r tests/requirements.txt 
+    - python test.py:
+        pwd: 
+          tests
