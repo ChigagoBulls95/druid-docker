@@ -21,9 +21,6 @@ kafka:
     KAFKA_BROKER_ID: 1
     KAFKA_NUM_PARTITIONS: 4
 
-twitterproducer:
-  image: 
-
 druidbroker1:
   image: banno/druid-broker:latest
   links:
@@ -141,16 +138,3 @@ druidoverlord1:
   environment:
     DRUID_PORT: 8085
 
-druid:
-  image: ubuntu:14.04
-  command: echo "Druid rules"
-  links:
-    - druidbroker1
-    - druidbroker2
-    - druidcoordinator1
-    - druidcoordinator2
-    - druidhistorical1
-    - druidhistorical2
-    # - druidrealtime1
-    # - druidrealtime2
-    - druidoverlord1
