@@ -66,7 +66,7 @@ druidhistorical1:
   ports:
     - "8083:8083"
   volumes:
-    - /tmp/druid:/tmp/druid/localStorage
+    - /tmp/druid/:/tmp/druid/localStorage/
   environment:
     DRUID_PORT: 8083
 
@@ -77,7 +77,7 @@ druidhistorical2:
   ports:
     - "8183:8183"
   volumes:
-    - /tmp/druid:/tmp/druid/localStorage
+    - /tmp/druid/:/tmp/druid/localStorage/
   environment:
     DRUID_PORT: 8183
 
@@ -89,7 +89,7 @@ druidrealtime1:
   ports:
     - "8084:8084"
   volumes:
-    - /tmp/druid:/tmp/druid/localStorage
+    - /tmp/druid/:/tmp/druid/localStorage/
   environment:
     DRUID_PORT: 8084
 
@@ -101,7 +101,7 @@ druidrealtime2:
   ports:
     - "8184:8184"
   volumes:
-    - /tmp/druid:/tmp/druid/localStorage
+    - /tmp/druid/:/tmp/druid/localStorage/
   environment:
     DRUID_PORT: 8184
 
@@ -134,7 +134,7 @@ druidoverlord1:
     - "8118:8118"
     - "8119:8119"
   volumes:
-    - /tmp/druid:/tmp/druid/localStorage
+    - /tmp/druid/:/tmp/druid/localStorage/
     - examples/:/segmentData/:ro
 
   environment:
