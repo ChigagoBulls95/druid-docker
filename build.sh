@@ -2,7 +2,7 @@
 
 TAG="latest"
 
-fig build postgres
+docker-compose build postgres
 docker build -t banno/druid-base:$TAG base
 docker build -t banno/druid-broker:$TAG broker
 docker build -t banno/druid-coordinator:$TAG coordinator
