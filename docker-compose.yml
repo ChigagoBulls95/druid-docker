@@ -6,7 +6,7 @@ zookeeper:
 postgres:
   build: ./postgres
   ports:
-    - "5432:5432"
+    - "9876:5432"
 
 kafka:
   image: wurstmeister/kafka:0.8.2.0
