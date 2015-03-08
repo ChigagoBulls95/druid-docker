@@ -1,3 +1,5 @@
+[![Build](https://circleci.com/gh/ChigagoBulls95/druid-docker.png?style=shield)](https://circleci.com/gh/ChigagoBulls95/druid-docker)
+
 ## Overview
 
 Example of running Druid broker, coordinator, historical and realtime nodes in separate Docker containers, along with Zookeeper and Postgres in their own Docker containers, all wired together via fig.
@@ -96,4 +98,4 @@ One approach to using env vars in .properties files is to have a "sidecar" shell
 
 Another option is to create generic base images using the stock .properties files, and then create sub-images with the actual .properties files to use overwriting the stock ones. A downside of this approach is that all config values are hard-coded and cannot be dynamic (e.g. random port chosen by Marathon). This also leads to creating separate Docker images for different environments, e.g. staging and production.
 
-[![Build](https://circleci.com/gh/ChigagoBulls95/druid-docker.png?style=shield)](https://circleci.com/gh/ChigagoBulls95/druid-docker)
+
