@@ -92,7 +92,7 @@ druidrealtime1:
     - /tmp/druid/:/tmp/druid/localStorage/
   environment:
     DRUID_PORT: 8084
-    JAVA_MAX_DIRECT_MEMORY: 256m
+    JAVA_MAX_DIRECT_MEMORY: 1g
 
 # druidrealtime2:
 #   image: banno/druid-realtime:latest
