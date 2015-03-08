@@ -81,18 +81,18 @@ druidhistorical1:
 #   environment:
 #     DRUID_PORT: 8183
 
-druidrealtime1:
-  image: banno/druid-realtime:latest
-  links:
-    - zookeeper
-    - kafka
-  ports:
-    - "8084:8084"
-  volumes:
-    - /tmp/druid/:/tmp/druid/localStorage/
-  environment:
-    DRUID_PORT: 8084
-    JAVA_MAX_DIRECT_MEMORY: 1g
+# druidrealtime1:
+#   image: banno/druid-realtime:latest
+#   links:
+#     - zookeeper
+#     - kafka
+#   ports:
+#     - "8084:8084"
+#   volumes:
+#     - /tmp/druid/:/tmp/druid/localStorage/
+#   environment:
+#     DRUID_PORT: 8084
+#     JAVA_MAX_DIRECT_MEMORY: 1g
 
 # druidrealtime2:
 #   image: banno/druid-realtime:latest
