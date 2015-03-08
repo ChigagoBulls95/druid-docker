@@ -9,7 +9,7 @@ def printDockerComposeLogs():
 
 @retry(stop_max_delay=60000, wait_fixed=5000)
 def indexData():
-  result = os.popen("curl -X 'POST' -H 'Content-Type:application/json' --retry 30 --retry-delay 5 -d @wikipedia_index_task.json 192.168.59.103:8085/druid/indexer/v1/task").read()
+  result = os.popen("curl -X 'POST' -H 'Content-Type:application/json' -d @wikipedia_index_task.json 192.168.59.103:8085/druid/indexer/v1/task").read()
   if 'task' not in result:
     raise Exception('Response to query was incorrect')
 
@@ -17,7 +17,7 @@ def indexData():
 
 @retry(stop_max_delay=120000, wait_fixed=5000)
 def queryData():
-  result = os.popen("curl -X 'POST' -H 'content-type: application/json' '192.168.59.103:8082/druid/v2/?pretty' --retry 30 --retry-delay 5 -d @time_bound_query.json").read()
+  result = os.popen("curl -X 'POST' -H 'content-type: application/json' '192.168.59.103:8082/druid/v2/?pretty' -d @time_bound_query.json").read()
   if '"maxTime" : "2013-08-31T12:41:27.000Z"' not in result:
     raise Exception('Response to query was incorrect')
 
