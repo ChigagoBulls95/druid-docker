@@ -41,5 +41,6 @@ try:
 except:
   os.chdir('..')
   printDockerComposeLogs()
+  raise
 
 
