@@ -62,7 +62,7 @@
       "firehose": {
         "type": "kafka-0.8",
         "consumerProps": {
-          "zookeeper.connect": "192.168.59.103:2181/kafka",
+          "zookeeper.connect": "$ZOOKEEPER_PORT_2181_TCP_ADDR:2181/kafka",
           "zookeeper.connection.timeout.ms": "15000",
           "zookeeper.session.timeout.ms": "15000",
           "zookeeper.sync.time.ms": "5000",
