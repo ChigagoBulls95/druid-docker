@@ -8,13 +8,17 @@ def printDockerComposeLogs():
 
 # Gets local host or docker host ip on osx.
 def getHost():
-  ip = os.popen('boot2docker ip').read()
+  ip = os.popen('boot2docker ip').read().strip()
   if('.' not in ip):
     ip = 'localhost'
+
+  print(ip)
   return ip
 
 @retry(stop_max_delay=60000, wait_fixed=5000)
 def indexData():
+  command = "curl -X 'POST' -H 'Content-Type:application/json' --max-time 10 -d @wikipedia_index_task.json " + getHost() + ":8085/druid/indexer/v1/task"
+  print(command)
   result = os.popen("curl -X 'POST' -H 'Content-Type:application/json' --max-time 10 -d @wikipedia_index_task.json " + getHost() + ":8085/druid/indexer/v1/task").read()
   if 'task' not in result:
     raise Exception('Response to query was incorrect')
