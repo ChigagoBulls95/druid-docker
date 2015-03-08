@@ -15,7 +15,7 @@ RUN java -cp "/usr/local/druid/config/_common:/usr/local/druid/lib/*" io.druid.c
 
 ENV JAVA_MAX_HEAP 1g
 ENV JAVA_MIN_HEAP 1g
-ENV JAVA_MAX_DIRECT_MEMORY 1g
+ENV JAVA_MAX_DIRECT_MEMORY 256m
 
 ENV DRUID_COMMON_JAVA_OPTIONS -server -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Xmx$JAVA_MAX_HEAP -Xms$JAVA_MIN_HEAP -XX:MaxDirectMemorySize=$JAVA_MAX_DIRECT_MEMORY
 
