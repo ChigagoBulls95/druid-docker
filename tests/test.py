@@ -4,12 +4,18 @@ import time
 from retrying import retry
 
 def printDockerComposeLogs():
-  os.system('docker-compose logs &')
+  os.system('timelimit -t 1 docker-compose logs')
 
+# Gets local host or docker host ip on osx.
+def getHost():
+  ip = os.popen('boot2docker ip').read()
+  if('.' not in ip):
+    ip = 'localhost'
+  return ip
 
 @retry(stop_max_delay=60000, wait_fixed=5000)
 def indexData():
-  result = os.popen("curl -X 'POST' -H 'Content-Type:application/json' --max-time 10 -d @wikipedia_index_task.json 192.168.59.103:8085/druid/indexer/v1/task").read()
+  result = os.popen("curl -X 'POST' -H 'Content-Type:application/json' --max-time 10 -d @wikipedia_index_task.json " + getHost() + ":8085/druid/indexer/v1/task").read()
   if 'task' not in result:
     raise Exception('Response to query was incorrect')
 
@@ -17,7 +23,7 @@ def indexData():
 
 @retry(stop_max_delay=120000, wait_fixed=5000)
 def queryData():
-  result = os.popen("curl -X 'POST' -H 'content-type: application/json' --max-time 10 '192.168.59.103:8082/druid/v2/?pretty' -d @time_bound_query.json").read()
+  result = os.popen("curl -X 'POST' -H 'content-type: application/json' --max-time 10 '" + getHost() + ":8082/druid/v2/?pretty' -d @time_bound_query.json").read()
   if '"maxTime" : "2013-08-31T12:41:27.000Z"' not in result:
     raise Exception('Response to query was incorrect')
 
