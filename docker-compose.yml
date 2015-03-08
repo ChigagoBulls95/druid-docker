@@ -1,7 +1,7 @@
 zookeeper:
   image: jplock/zookeeper:3.4.6
   ports:
-    - "2181:2181"
+    - "9875:2181"
 
 postgres:
   build: ./postgres
