@@ -1,4 +1,4 @@
-[![Build](https://circleci.com/gh/ChigagoBulls95/druid-docker.png?style=shield)](https://circleci.com/gh/ChigagoBulls95/druid-docker)
+[![Build](https://circleci.com/gh/ChigagoBulls95/druid-docker-cluster.png?style=shield)](https://circleci.com/gh/ChigagoBulls95/druid-docker-cluster)
 
 ## Overview
 
