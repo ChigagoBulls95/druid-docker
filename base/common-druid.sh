@@ -10,5 +10,5 @@ druid_config_add "druid.port=$DRUID_PORT"
 
 druid_config_add "druid.zk.service.host=$ZOOKEEPER_PORT_2181_TCP_ADDR"
 
-druid_config_add "druid.metadata.storage.connector.connectURI=jdbc\:postgresql\://$POSTGRES_1_PORT_5432_TCP_ADDR\:$POSTGRES_1_PORT_5432_TCP_PORT/druid"
+druid_config_add "druid.metadata.storage.connector.connectURI=jdbc:postgresql://$POSTGRES_1_PORT_5432_TCP_ADDR:$POSTGRES_1_PORT_5432_TCP_PORT/druid"
 
