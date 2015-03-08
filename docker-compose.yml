@@ -32,6 +32,7 @@ druidbroker1:
     - "8082:8082"
   environment:
     DRUID_PORT: 8082
+    JAVA_MAX_DIRECT_MEMORY: 3g
 
 
 druidcoordinator1:
@@ -55,7 +56,7 @@ druidhistorical1:
     - /tmp/druid/:/tmp/druid/localStorage/
   environment:
     DRUID_PORT: 8083
-
+    JAVA_MAX_DIRECT_MEMORY: 3g
 
 druidoverlord1:
   image: banno/druid-overlord:latest
