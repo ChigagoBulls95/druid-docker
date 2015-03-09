@@ -42,6 +42,7 @@ middlemanager1:
     - "8091:8091"
   volumes:    
     - /tmp/druid/:/tmp/druid/localStorage/
+    - /tmp/middlemanager/log:/data/log
     - examples/:/segmentData/:ro
   environment:
     DRUID_PORT: 8091
