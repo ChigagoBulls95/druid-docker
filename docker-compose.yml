@@ -48,7 +48,7 @@ middlemanager1:
     JAVA_MAX_DIRECT_MEMORY: 3g
     JAVA_PEON_MAX_HEAP: 1g 
     JAVA_PEON_MIN_HEAP: 256m 
-    JAVA_PEON_MAX_DIRECT_MEMORY: 1g
+    JAVA_PEON_MAX_DIRECT_MEMORY: 3g
 
 druidcoordinator1:
   image: banno/druid-coordinator:latest
