@@ -12,3 +12,4 @@ test:
 dependencies:
   pre:
     - sudo pip install -U docker-compose
+    - sudo apt-get install -y coreutils 
