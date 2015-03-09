@@ -25,6 +25,14 @@ Send queries to the broker at http://192.168.59.103:8082/druid/v2/ (TODO example
 
 To shut everything down: `fig kill && fig rm --force`
 
+
+If you're using OSx you might need to up the memory assigned to boot2docker like [this](http://stackoverflow.com/questions/24422123/change-boot2docker-memory-assignment):
+
+* `boot2docker delete`
+* `boot2docker init -m 5555`
+* `boot2docker up`
+*
+$ boot2docker info
 ## Design Notes
 
 Druid [node types](http://druid.io/docs/0.7.0/Design.html):
