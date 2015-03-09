@@ -31,7 +31,7 @@ If you're using OSx you might need to up the memory assigned to boot2docker like
 * `boot2docker delete`
 * `boot2docker init -m 5555`
 * `boot2docker up`
-*
+
 $ boot2docker info
 ## Design Notes
 
