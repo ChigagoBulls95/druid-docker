@@ -40,9 +40,15 @@ middlemanager1:
     - zookeeper
   ports:
     - "8091:8091"
+  volumes:    
+    - /tmp/druid/:/tmp/druid/localStorage/
+    - examples/:/segmentData/:ro
   environment:
     DRUID_PORT: 8091
     JAVA_MAX_DIRECT_MEMORY: 3g
+    JAVA_PEON_MAX_HEAP: 1g 
+    JAVA_PEON_MIN_HEAP: 256m 
+    JAVA_PEON_MAX_DIRECT_MEMORY: 1g
 
 druidcoordinator1:
   image: banno/druid-coordinator:latest
@@ -101,6 +107,7 @@ druidoverlord1:
 
   environment:
     DRUID_PORT: 8085
+    RUNNER_TYPE: remote
 
 
 # druidbroker2:

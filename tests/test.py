@@ -32,7 +32,6 @@ def queryData():
     raise Exception('Response to query was incorrect')
 
 
-
 os.chdir('..')
 
 print('Building Docker images \n')
